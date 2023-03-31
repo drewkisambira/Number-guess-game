@@ -1,0 +1,25 @@
+import random
+
+# Set the range of numbers to guess from
+lower = 1
+upper = 100
+
+# Generate a random number between lower and upper
+number = random.randint(lower, upper)
+
+# Set the number of guesses
+guesses = 5
+
+# Prompt the player to guess the number
+print(f"I'm thinking of a number between {lower} and {upper}. Can you guess it in {guesses} tries?")
+for i in range(guesses):
+    guess = int(input("Enter your guess: "))
+    if guess == number:
+        print("Congratulations! You guessed the number.")
+        break
+    elif guess < number:
+        print("Your guess is too low.")
+    else:
+        print("Your guess is too high.")
+else:
+    print(f"Sorry, you ran out of guesses. The number was {number}.")
